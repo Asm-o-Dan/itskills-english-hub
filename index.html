@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITSkills English Hub • Интерактивный IT-словарь</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-group" onclick="selectCourse('app-inventor')">
+      <div class="logo-icon">🚀</div>
+      <div class="logo-text">
+        <h1>ITSkills English Hub</h1>
+        <p>Английские IT-термины и блоки кода</p>
+      </div>
+    </div>
+    <div id="courseSelector" style="display: flex; gap: 8px;"></div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <div class="hero-section">
+      <h2>Карточки технических терминов</h2>
+      <p>Кликай на карточки, слушай правильное произношение и запоминай, как слова работают в коде!</p>
+    </div>
+
+    <!-- LESSON NAVIGATION PILLS -->
+    <div class="lesson-nav" id="lessonNav">
+      <!-- Generated via JS -->
+    </div>
+
+    <!-- ACTIVE LESSON HEADER -->
+    <div class="active-lesson-header" id="activeLessonHeader">
+      <div class="active-lesson-title">
+        <h3 id="lessonTitle">Загрузка урока...</h3>
+        <p id="lessonSubtitle"></p>
+      </div>
+      <div class="lesson-stats" id="lessonWordCount">0 слов</div>
+    </div>
+
+    <!-- 3D CARDS GRID -->
+    <div class="cards-grid" id="cardsContainer">
+      <!-- Generated via JS -->
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 ITSkills Academy • Образовательная экосистема для юных инженеров</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
