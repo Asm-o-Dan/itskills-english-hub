@@ -1,0 +1,166 @@
+{
+  "courses": [
+    {
+      "id": "app-inventor",
+      "title": "MIT App Inventor",
+      "subtitle": "Мобильная разработка для Android",
+      "icon": "📱",
+      "color": "#4F46E5",
+      "lessonsCount": 12,
+      "lessons": [
+        {
+          "number": 1,
+          "title": "Говорящий питомец",
+          "subtitle": "Digital Talking Pet",
+          "words": [
+            { "term": "Click", "transcription": "[klɪk]", "translation": "Клик / Нажатие", "definition": "Момент касания пальцем кнопки или экрана.", "block": "when Button.Click" },
+            { "term": "Button", "transcription": "[ˈbʌt.ən]", "translation": "Кнопка", "definition": "Элемент интерфейса, запускающий действие при нажатии.", "block": "Button1" },
+            { "term": "Sound", "transcription": "[saʊnd]", "translation": "Звук", "definition": "Компонент для воспроизведения коротких звуковых эффектов и вибрации.", "block": "call Sound1.Play" },
+            { "term": "Shake", "transcription": "[ʃeɪk]", "translation": "Трясти / Встряхивание", "definition": "Физическое движение смартфона, улавливаемое датчиком.", "block": "when AccelerometerSensor.Shaking" },
+            { "term": "Pitch", "transcription": "[pɪtʃ]", "translation": "Высота / Тональность голоса", "definition": "Число от 0.5 (низкий робот) до 2.0 (весёлый бурундук).", "block": "set TextToSpeech1.Pitch to 2.0" }
+          ]
+        },
+        {
+          "number": 2,
+          "title": "Граффити мастер",
+          "subtitle": "Graffiti Master Drawing App",
+          "words": [
+            { "term": "Canvas", "transcription": "[ˈkæn.vəs]", "translation": "Холст для рисования", "definition": "Область экрана со своей сеткой координат (X, Y) для графики.", "block": "Canvas1" },
+            { "term": "Draw", "transcription": "[drɔː]", "translation": "Рисовать", "definition": "Команда создания линий, кругов или точек на холсте.", "block": "call Canvas1.DrawLine" },
+            { "term": "Drag", "transcription": "[dræɡ]", "translation": "Перетаскивать пальцем", "definition": "Жест непрерывного ведения пальца по экрану.", "block": "when Canvas1.Dragged" },
+            { "term": "Eraser", "transcription": "[ɪˈreɪ.zər]", "translation": "Ластик", "definition": "Инструмент стирания рисунка (заливка фоновым цветом).", "block": "set Canvas1.PaintColor to White" },
+            { "term": "Clear", "transcription": "[klɪər]", "translation": "Очистить экран", "definition": "Команда полного удаления всех рисунков с холста.", "block": "call Canvas1.Clear" },
+            { "term": "LineWidth", "transcription": "[laɪn wɪdθ]", "translation": "Толщина линии", "definition": "Толщина следа кисти в пикселях от 1 до 25.", "block": "set Canvas1.LineWidth to Slider1.ThumbPosition" }
+          ]
+        },
+        {
+          "number": 3,
+          "title": "Космический охотник",
+          "subtitle": "Space Catcher Game",
+          "words": [
+            { "term": "Sprite", "transcription": "[spraɪt]", "translation": "Игровой спрайт", "definition": "Интерактивный графический объект, который может двигаться по холсту.", "block": "ImageSprite1" },
+            { "term": "Clock", "transcription": "[klɒk]", "translation": "Таймер / Часы", "definition": "Компонент, вызывающий действия через равные интервалы времени.", "block": "when Clock1.Timer" },
+            { "term": "Interval", "transcription": "[ˈɪn.tə.vəl]", "translation": "Интервал времени", "definition": "Время между срабатываниями таймера в миллисекундах (500 мс = 0.5 сек).", "block": "set Clock1.TimerInterval to 500" },
+            { "term": "Random", "transcription": "[ˈræn.dəm]", "translation": "Случайное число", "definition": "Генерация непредсказуемого значения для координат спрайта.", "block": "random integer from 1 to 100" },
+            { "term": "Score", "transcription": "[skɔːr]", "translation": "Игровые очки / Счёт", "definition": "Числовая переменная, хранящая текущие баллы игрока.", "block": "set global Score to get global Score + 1" },
+            { "term": "HighScore", "transcription": "[haɪ skɔːr]", "translation": "Рекорд", "definition": "Максимальный результат за все сыгранные раунды.", "block": "get global HighScore" }
+          ]
+        },
+        {
+          "number": 4,
+          "title": "Звёздный защитник",
+          "subtitle": "Space Dodger: Physics & Collisions",
+          "words": [
+            { "term": "Heading", "transcription": "[ˈhed.ɪŋ]", "translation": "Угол направления полета", "definition": "Направление движения спрайта в градусах от 0° до 360°.", "block": "set AsteroidSprite.Heading to 45" },
+            { "term": "Speed", "transcription": "[spiːd]", "translation": "Скорость движения", "definition": "Количество пикселей, на которое спрайт сдвигается за 1 такт.", "block": "set AsteroidSprite.Speed to 8" },
+            { "term": "Bounce", "transcription": "[baʊns]", "translation": "Отскок / Рикошет", "definition": "Физическое отражение спрайта при ударе о границу экрана.", "block": "call AsteroidSprite.Bounce (edge)" },
+            { "term": "Collision", "transcription": "[kəˈlɪʒ.ən]", "translation": "Столкновение", "definition": "Касание двух спрайтов друг с другом в игре.", "block": "when ShipSprite.CollidedWith (other)" },
+            { "term": "Lives", "transcription": "[laɪvz]", "translation": "Жизни игрока", "definition": "Количество попыток до экрана Game Over (обычно 3 жизни).", "block": "set global Lives to get global Lives - 1" },
+            { "term": "Edge", "transcription": "[edʒ]", "translation": "Край экрана", "definition": "Физическая граница холста (верх, низ, лево, право).", "block": "when AsteroidSprite.EdgeReached (edge)" }
+          ]
+        },
+        {
+          "number": 5,
+          "title": "Шпионский квест",
+          "subtitle": "Multi-Screen Spy Quest",
+          "words": [
+            { "term": "Screen", "transcription": "[skriːn]", "translation": "Экран приложения", "definition": "Отдельная страница интерфейса: Menu, Briefing, Mission, SecretVault.", "block": "Screen1, ScreenBriefing" },
+            { "term": "Menu", "transcription": "[ˈmen.juː]", "translation": "Главное меню", "definition": "Стартовый экран с выбором режима или уровня сложности.", "block": "open another screen (ScreenMenu)" },
+            { "term": "StartValue", "transcription": "[stɑːt ˈvæl.juː]", "translation": "Стартовый параметр", "definition": "Секретные данные, передаваемые при переходе между экранами.", "block": "open another screen with start value" },
+            { "term": "Inventory", "transcription": "[ˈɪn.vən.trɪ]", "translation": "Инвентарь агента", "definition": "Список собранных предметов, ключей и гаджетов.", "block": "get start value" },
+            { "term": "Quest", "transcription": "[kwest]", "translation": "Квест / Задание", "definition": "Интерактивная цепочка миссий и загадок.", "block": "QuestStatus" },
+            { "term": "Secret", "transcription": "[ˈsiː.krət]", "translation": "Секрет / Пароль", "definition": "Скрытый код для разблокировки электронного сейфа.", "block": "SecretCode" }
+          ]
+        },
+        {
+          "number": 6,
+          "title": "Магический шар",
+          "subtitle": "Magic 8-Ball & Lists",
+          "words": [
+            { "term": "List", "transcription": "[lɪst]", "translation": "Список данных", "definition": "Коллекция элементов под одним общим именем переменной.", "block": "make a list ('Да', 'Нет', 'Спроси позже')" },
+            { "term": "Item", "transcription": "[ˈaɪ.təm]", "translation": "Элемент списка", "definition": "Отдельный объект или фраза внутри общего списка.", "block": "pick a random item list" },
+            { "term": "Index", "transcription": "[ˈɪn.deks]", "translation": "Порядковый номер", "definition": "Номер позиции элемента в списке (в App Inventor начинается с 1).", "block": "select list item (index)" },
+            { "term": "Length", "transcription": "[leŋθ]", "translation": "Длина / Количество элементов", "definition": "Общее число записей в списке данных.", "block": "length of list" },
+            { "term": "Append", "transcription": "[əˈpend]", "translation": "Добавить в конец", "definition": "Команда добавления нового элемента в существующий список.", "block": "add items to list" }
+          ]
+        },
+        {
+          "number": 7,
+          "title": "Битва умов",
+          "subtitle": "Smart Brain Quiz App",
+          "words": [
+            { "term": "Condition", "transcription": "[kənˈdɪʃ.ən]", "translation": "Логическое условие", "definition": "Проверка истины: верный ли ответ выбрал ученик.", "block": "if ... then ... else" },
+            { "term": "Compare", "transcription": "[kəmˈpeər]", "translation": "Сравнить значения", "definition": "Операция проверки равенства текста или чисел.", "block": "compare texts (text1 = text2)" },
+            { "term": "Notifier", "transcription": "[ˈnəʊ.tɪ.faɪ.ər]", "translation": "Диалоговое окно / Оповещатель", "definition": "Всплывающее системное окно с предупреждением или поздравлением.", "block": "call Notifier1.ShowAlert" },
+            { "term": "Alert", "transcription": "[əˈlɜːt]", "translation": "Всплывающее предупреждение", "definition": "Короткая плашка подсказки, исчезающая через 2 секунды.", "block": "notice text" },
+            { "term": "True / False", "transcription": "[truː / fɔːls]", "translation": "Истина / Ложь", "definition": "Булевы значения логики программирования (Да / Нет).", "block": "true / false blocks" }
+          ]
+        },
+        {
+          "number": 8,
+          "title": "Тамагочи с сохранениями",
+          "subtitle": "Persistent Pet with TinyDB",
+          "words": [
+            { "term": "Database", "transcription": "[ˈdeɪ.tə.beɪs]", "translation": "База данных", "definition": "Хранилище информации в постоянной энергонезависимой памяти смартфона.", "block": "TinyDB1" },
+            { "term": "Store", "transcription": "[stɔːr]", "translation": "Сохранить / Записать", "definition": "Команда записи значения в память по ключевому слову-тегу.", "block": "call TinyDB1.StoreValue (tag, value)" },
+            { "term": "Load", "transcription": "[ləʊd]", "translation": "Загрузить / Прочитать", "definition": "Чтение сохраненных параметров при старте приложения.", "block": "call TinyDB1.GetValue (tag, default)" },
+            { "term": "Tag", "transcription": "[tæɡ]", "translation": "Тег / Имя ключа", "definition": "Текстовая метка ячейки памяти (например, 'PetHunger').", "block": "tag: 'Hunger'" },
+            { "term": "Persistent", "transcription": "[pəˈsɪs.tənt]", "translation": "Постоянный / Сохраняемый", "definition": "Данные, которые не пропадают при закрытии приложения или перезагрузке.", "block": "TinyDB Storage" },
+            { "term": "Initialize", "transcription": "[ɪˈnɪʃ.əl.aɪz]", "translation": "Инициализация / Запуск", "definition": "Событие первого включения экрана для загрузки сейвов.", "block": "when Screen1.Initialize" }
+          ]
+        },
+        {
+          "number": 9,
+          "title": "Фитнес-трекер",
+          "subtitle": "Pedometer Fitness App",
+          "words": [
+            { "term": "Pedometer", "transcription": "[pɪˈdɒm.ɪ.tər]", "translation": "Шагомер", "definition": "Аппаратный датчик смартфона, регистрирующий реальные шаги человека.", "block": "Pedometer1" },
+            { "term": "Steps", "transcription": "[steps]", "translation": "Шаги", "definition": "Количество шагов, сделанных во время ходьбы.", "block": "when Pedometer1.SimpleStep" },
+            { "term": "Distance", "transcription": "[ˈdɪs.təns]", "translation": "Дистанция", "definition": "Пройденное расстояние в метрах или километрах.", "block": "call Pedometer1.Distance" },
+            { "term": "Calories", "transcription": "[ˈkæl.ər.iz]", "translation": "Калории", "definition": "Энергия, сожженная во время тренировки.", "block": "Steps * 0.04" },
+            { "term": "Goal", "transcription": "[ɡəʊl]", "translation": "Цель дня", "definition": "Количество шагов, заданное для достижения (например, 100 шагов).", "block": "if Steps >= Goal then Win" },
+            { "term": "Elapsed", "transcription": "[ɪˈlæpst]", "translation": "Прошедшее время", "definition": "Время тренировки с момента нажатия кнопки Start.", "block": "call Pedometer1.ElapsedTime" }
+          ]
+        },
+        {
+          "number": 10,
+          "title": "DJ Студия",
+          "subtitle": "Soundboard & Drum Pad",
+          "words": [
+            { "term": "Soundboard", "transcription": "[ˈsaʊnd.bɔːd]", "translation": "Драм-машина / Звуковая панель", "definition": "Сетка интерактивных кнопок-пэдов для запуска звуковых сэмплов.", "block": "TableArrangement" },
+            { "term": "Beat", "transcription": "[biːt]", "translation": "Бит / Ритм", "definition": "Ударный пульс музыкального трека (бочка, снейр, бас).", "block": "PadKick, PadSnare" },
+            { "term": "Loop", "transcription": "[luːp]", "translation": "Зацикленный луп", "definition": "Музыкальный отрезок, повторяющийся бесконечно без пауз.", "block": "set Player1.Loop to true" },
+            { "term": "Volume", "transcription": "[ˈvɒl.juːm]", "translation": "Громкость", "definition": "Уровень звучания инструмента от 0 до 100%.", "block": "set Player1.Volume to Slider.ThumbPosition" },
+            { "term": "Track", "transcription": "[træk]", "translation": "Звуковая дорожка", "definition": "Отдельный аудиофайл инструмента или вокала.", "block": "Player1.Source = 'track.mp3'" },
+            { "term": "Sample", "transcription": "[ˈsɑːm.pəl]", "translation": "Короткий сэмпл", "definition": "Мгновенный звуковой отрывок (выстрел, щелчок, хлопок).", "block": "Sound1.Play" }
+          ]
+        },
+        {
+          "number": 11,
+          "title": "Хакатон: Сборка приложения",
+          "subtitle": "Project Sprint & APK Build",
+          "words": [
+            { "term": "Build", "transcription": "[bɪld]", "translation": "Сборка проекта", "definition": "Процесс объединения кода, дизайна и звуков в единый файл.", "block": "Build Menu -> Android App (.apk)" },
+            { "term": "Compile", "transcription": "[kəmˈpaɪl]", "translation": "Компиляция", "definition": "Перевод визуальных блоков в машинный код Android.", "block": "Cloud Compiler" },
+            { "term": "APK", "transcription": "[eɪ piː keɪ]", "translation": "Файл .apk", "definition": "Установочный пакет приложения для операционной системы Android.", "block": "MyProject.apk" },
+            { "term": "Icon", "transcription": "[ˈaɪ.kɒn]", "translation": "Иконка приложения", "definition": "Квадратная миниатюра (512x512 px) на рабочем столе смартфона.", "block": "set Screen1.Icon to 'app_icon.png'" },
+            { "term": "Debug", "transcription": "[diːˈbʌɡ]", "translation": "Отладка / Поиск багов", "definition": "Поиск и исправление логических ошибок в коде блоков.", "block": "Do It / Test with Companion" },
+            { "term": "Release", "transcription": "[rɪˈliːs]", "translation": "Релиз / Выпуск", "definition": "Финальная версия игры, готовая к установке пользователями.", "block": "Release 1.0" }
+          ]
+        },
+        {
+          "number": 12,
+          "title": "Demo Day: Защита проектов",
+          "subtitle": "Graduation & Pitch",
+          "words": [
+            { "term": "Pitch", "transcription": "[pɪtʃ]", "translation": "Питч / Презентация идеи", "definition": "Короткий энергичный рассказ о проекте зрителям и жюри.", "block": "2-Minute Project Pitch" },
+            { "term": "Presentation", "transcription": "[ˌprez.ənˈteɪ.ʃən]", "translation": "Презентация", "definition": "Демонстрация слайдов и живого геймплея на экране.", "block": "Demo Day Slides" },
+            { "term": "Feature", "transcription": "[ˈfiː.tʃər]", "translation": "Фишка / Уникальная функция", "definition": "Главная особенность игры, отличающая её от других.", "block": "Unique Game Mechanic" },
+            { "term": "Developer", "transcription": "[dɪˈvel.ə.pər]", "translation": "Разработчик / Создатель", "definition": "Инженер-программист, создавший и настроивший проект.", "block": "Junior Android Developer" },
+            { "term": "Certificate", "transcription": "[səˈtɪf.ɪ.kət]", "translation": "Сертификат выпускника", "definition": "Официальный диплом об успешном окончании курса ITSkills.", "block": "ITSkills Academy Graduate" }
+          ]
+        }
+      ]
+    }
+  ]
+}
