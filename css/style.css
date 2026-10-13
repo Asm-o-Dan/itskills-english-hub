@@ -1,0 +1,353 @@
+:root {
+  --primary: #4F46E5;
+  --primary-hover: #4338CA;
+  --accent: #10B981;
+  --accent-pink: #EC4899;
+  --bg: #0F172A;
+  --card-bg: #1E293B;
+  --card-front: #1E293B;
+  --card-back: #26334D;
+  --text: #F8FAFC;
+  --text-muted: #94A3B8;
+  --border: #334155;
+  --radius: 18px;
+  --font: 'Comic Sans MS', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--border);
+  padding: 1.25rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  background: #312E81;
+  padding: 8px 12px;
+  border-radius: 14px;
+  border: 1px solid #4F46E5;
+}
+
+.logo-text h1 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #818CF8, #EC4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-text p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+main {
+  flex: 1;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* COURSE HERO & SELECTOR */
+.hero-section {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.hero-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+/* LESSON PICKER PILLS */
+.lesson-nav {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 8px 4px 16px;
+  margin-bottom: 2rem;
+  scrollbar-width: thin;
+}
+
+.lesson-pill {
+  flex-shrink: 0;
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  color: var(--text-muted);
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lesson-pill:hover {
+  border-color: #818CF8;
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+.lesson-pill.active {
+  background: linear-gradient(135deg, #4F46E5, #7C3AED);
+  border-color: #A5B4FC;
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.4);
+}
+
+/* LESSON HEADER */
+.active-lesson-header {
+  background: linear-gradient(135deg, #1E293B, #0F172A);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.active-lesson-title h3 {
+  font-size: 1.6rem;
+  color: #FFFFFF;
+}
+
+.active-lesson-title p {
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.lesson-stats {
+  background: #0F172A;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: #A5B4FC;
+}
+
+/* 3D FLASHCARDS GRID */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.75rem;
+  perspective: 1200px;
+}
+
+.card-container {
+  height: 340px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+  border-radius: var(--radius);
+}
+
+.card-container.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* FRONT */
+.card-front {
+  background: linear-gradient(145deg, #1E293B, #162032);
+}
+
+.card-container:hover .card-front {
+  border-color: #6366F1;
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.3);
+}
+
+.card-badge {
+  align-self: flex-start;
+  background: #312E81;
+  color: #C7D2FE;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.card-main-word {
+  margin: auto 0;
+}
+
+.term-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.5px;
+}
+
+.transcription {
+  font-size: 1.1rem;
+  color: #94A3B8;
+  font-family: monospace;
+}
+
+.audio-btn {
+  background: #4F46E5;
+  color: white;
+  border: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  margin: 1rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+}
+
+.audio-btn:hover {
+  background: #6366F1;
+  transform: scale(1.1);
+}
+
+.audio-btn:active {
+  transform: scale(0.95);
+}
+
+.card-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* BACK */
+.card-back {
+  background: linear-gradient(145deg, #1E293B, #0F172A);
+  transform: rotateY(180deg);
+  border-color: var(--accent);
+  text-align: left;
+}
+
+.translation-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.definition-box {
+  background: rgba(15, 23, 42, 0.6);
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #E2E8F0;
+  margin-bottom: 0.75rem;
+  border-left: 3px solid var(--accent);
+}
+
+.block-box {
+  background: #020617;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px dashed #64748B;
+}
+
+.block-box span {
+  font-size: 0.75rem;
+  color: #94A3B8;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.block-code {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #F59E0B;
+  word-break: break-all;
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+  main {
+    padding: 1rem;
+  }
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
